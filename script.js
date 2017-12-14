@@ -11,18 +11,20 @@ $(document).ready(function() {
     // This function should return true if the input word starts with a vowel,
     // otherwise it should return false.
     function wordStartsWithVowel(word) {
-
+    if (word.charAt(0) === "a" || word.charAt(0) === "e" || word.charAt(0) === "i" || word.charAt(0) === "o" || word.charAt(0) === "u") {
+        return true;   
+    } else {
+        return false;
     }
-
     // Appends "yay" to the end of the word and returns the word.
     function appendYayToWord(word) {
-
+        word = word + "yay"
+        return word;
     }
-
     // Moves the first consonant to the end of the word, appends "ay" to the end of the word,
     // and returns the word.
     function convertWordWithConsonant(word) {
-
+        var firstLetter = word.charAt(0)
     }
 
     // If the word starts with a vowel, return the result of appendYayToWord.
@@ -35,4 +37,8 @@ $(document).ready(function() {
         // Gets a word from the input box
         // Transforms the word to pig latin
         // Displays the result on the screen in the output element
+    $("button").click(function(){
+        var input = $("input").val();
+            
+        });
 });
