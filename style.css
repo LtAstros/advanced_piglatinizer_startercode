@@ -1,0 +1,12 @@
+#title {
+    text-align: center
+}
+
+.body {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+#border {
+    border:2px solid;
+    border-color: black;
+}
