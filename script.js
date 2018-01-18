@@ -11,10 +11,11 @@ $(document).ready(function() {
     // This function should return true if the input word starts with a vowel,
     // otherwise it should return false.
     function wordStartsWithVowel(word) {
-    if (word.charAt(0) === "a" || word.charAt(0) === "e" || word.charAt(0) === "i" || word.charAt(0) === "o" || word.charAt(0) === "u") {
-        return true;   
-    } else {
-        return false;
+        if (word.charAt(0) === "a" || word.charAt(0) === "e" || word.charAt(0) === "i" || word.charAt(0) === "o" || word.charAt(0) === "u") {
+            return true;   
+        } else {
+            return false;
+        }
     }
     // Appends "yay" to the end of the word and returns the word.
     function appendYayToWord(word) {
@@ -24,21 +25,33 @@ $(document).ready(function() {
     // Moves the first consonant to the end of the word, appends "ay" to the end of the word,
     // and returns the word.
     function convertWordWithConsonant(word) {
-        var firstLetter = word.charAt(0)
+       return word.substring(1)+word.charAt(0)+"ay";
     }
 
     // If the word starts with a vowel, return the result of appendYayToWord.
     // Otherwise, return the result of convertWordWithConsonant.
     function convertWordToPigLatin(word) {
-
+        if (word.charAt(0) === "a" || word.charAt(0) === "e" || word.charAt(0) === "i" || word.charAt(0) === "o" || word.charAt(0) === "u") {
+            return appendYayToWord(word);   
+        } else {
+            return convertWordWithConsonant(word);
+        }
     }
 
     // Create a click handler that takes is triggered when the user clicks the translate button.
         // Gets a word from the input box
         // Transforms the word to pig latin
         // Displays the result on the screen in the output element
-    $("button").click(function(){
+    $("#translate").click(function(){
         var input = $("input").val();
-            
-        });
+        var arr = input.split(" ");
+        console.log(arr);
+        for(var count = 0; count < arr.length; count = count + 1){
+        $("#border").append(convertWordToPigLatin(arr[count]));
+        $("#border").append(" ");
+        }
+    });
+    $("#clear").click(function(){
+        $("#border").text(" ");
+    });
 });
