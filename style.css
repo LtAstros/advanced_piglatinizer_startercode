@@ -5,6 +5,9 @@
 .body {
     padding-left: 40px;
     padding-right: 40px;
+    background-color: gainsboro;
+    font-family: "Comic Sans MS";
+    color: salmon;
 }
 #border {
     border:2px solid;
